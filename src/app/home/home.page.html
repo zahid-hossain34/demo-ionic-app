@@ -1,20 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Vehicle Scanner</ion-title>
+    <ion-progress-bar *ngIf="isProcessing" type="indeterminate"></ion-progress-bar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+ <div class="center-content">
+  
+  <!-- Display the captured image -->
+  <div *ngIf="capturedImage" class="image-container">
+    <h2>Captured Image:</h2>
+    <img [src]="capturedImage" alt="Captured Image" />
   </div>
-</ion-content>
+  
+  <!-- Display the scanned text -->
+  <ion-card *ngIf="scannedText">
+    <ion-card-header>
+      <ion-card-title>Scanned Text:</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ scannedText }}
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="scanImage()" class="take-img-button">Take Picture</ion-button>
+ </div>

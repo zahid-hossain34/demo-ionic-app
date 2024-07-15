@@ -1,12 +1,12 @@
-#container {
-  text-align: center;
+// #container {
+//   text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
 
 #container strong {
   font-size: 20px;
@@ -24,4 +24,24 @@
 
 #container a {
   text-decoration: none;
+}
+.image-container img {
+  width: 100%;
+  max-width: 400px;
+}
+.text-container {
+  margin-top: 20px;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  flex-direction: column;
+  background: white !important;
+}
+.take-img-button{
+  margin-top: 20px;
 }
